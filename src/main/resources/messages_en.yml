@@ -1,0 +1,4 @@
+some:
+  kind:
+    of:
+      message: "some kind of message {0}"

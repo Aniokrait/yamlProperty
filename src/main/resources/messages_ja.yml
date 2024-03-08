@@ -1,0 +1,4 @@
+some:
+  kind:
+    of:
+      message: "なんらかのメッセージです{0}"

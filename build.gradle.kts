@@ -33,6 +33,9 @@ dependencies {
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+	// add for ReaderInputStream
+	implementation("commons-io:commons-io:2.15.1")
 }
 
 tasks.withType<Test> {
