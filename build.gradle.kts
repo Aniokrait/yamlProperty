@@ -21,6 +21,13 @@ repositories {
 	mavenCentral()
 }
 
+configure<SourceSetContainer> {
+	val activeProfile = if (project.hasProperty("profile")) project.property("profile") as String else "dev"
+	named("main") {
+		resources.srcDirs("src/profile/$activeProfile")
+	}
+}
+
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	compileOnly("org.projectlombok:lombok")
