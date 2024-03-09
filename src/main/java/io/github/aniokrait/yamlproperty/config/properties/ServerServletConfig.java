@@ -11,7 +11,7 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 @EnableConfigurationProperties
 @ConfigurationProperties(prefix = "server.servlet")
-@PropertySource(value = {"classpath:/application-common.yml"}, factory = YamlPropertiesSourceFactory.class)
+//@PropertySource(value = {"classpath:/application.yml"}, factory = YamlPropertiesSourceFactory.class)
 @Getter
 @Setter
 public class ServerServletConfig {

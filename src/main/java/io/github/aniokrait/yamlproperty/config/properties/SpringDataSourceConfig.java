@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableConfigurationProperties
-@ConfigurationProperties
+@ConfigurationProperties(prefix = "spring.datasource")
 @Getter
 @Setter
-public class EnvConfig {
-    private String envProperty;
+public class SpringDataSourceConfig {
+    String url;
 }

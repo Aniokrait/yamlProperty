@@ -1,7 +1,7 @@
 package io.github.aniokrait.yamlproperty.controller;
 
-import io.github.aniokrait.yamlproperty.config.properties.EnvConfig;
 import io.github.aniokrait.yamlproperty.config.properties.ServerServletConfig;
+import io.github.aniokrait.yamlproperty.config.properties.SpringDataSourceConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,18 +16,23 @@ public class MyController {
     private ServerServletConfig servletConfig;
 
     @Autowired
-    private EnvConfig envCOnfig;
+    private MessageSource messageSource;
 
     @Autowired
-    private MessageSource messageSource;
+    private SpringDataSourceConfig springDataSourceConfig;
 
     @GetMapping("/")
     public String getProperty() {
-        return servletConfig.getContextPath() + " " + envCOnfig.getEnvProperty();
+        return servletConfig.getContextPath();
     }
 
     @GetMapping("/message")
     public String getMessage() {
         return messageSource.getMessage("some.kind.of.message", new String[]{"hoge"}, Locale.JAPANESE);
+    }
+
+    @GetMapping("/setting")
+    public String getSpringSetting() {
+        return springDataSourceConfig.getUrl();
     }
 }
